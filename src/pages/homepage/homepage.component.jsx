@@ -6,7 +6,7 @@ import './homepage.styles.scss';
 
 
 
-const HomePage = () => {
+const HomePage = ({history}) => {
     return(
         <div className="homepage">
             <header>
@@ -34,4 +34,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage;
+export default HomePage; 
