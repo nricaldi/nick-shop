@@ -1,0 +1,23 @@
+.collection-preview {
+  .title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .preview {
+    //   display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-gap: 2rem;
+  }
+}
+
+$breakpoint-laptop: 1000px;
+@media (min-width: $breakpoint-laptop) {
+  .collection-preview {
+    .title {
+      margin-top: 3rem;
+      font-size: 2.5rem;
+    }
+  }
+}
