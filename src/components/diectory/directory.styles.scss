@@ -10,7 +10,7 @@
   grid-gap: 2rem;
   // padding: 2rem;
 
-  margin-top: -6rem;
+  // margin-top: -6rem;
   position: relative;
   z-index: 2;
 }
@@ -19,7 +19,7 @@ $breakpoint-tablet: 768px;
 @media (min-width: $breakpoint-tablet) {
   .directory-menu {
     grid-template-columns: repeat(6, 1fr);
-    margin-top: -10rem;
+    // margin-top: -10rem;
   }
 }
 
@@ -27,7 +27,7 @@ $breakpoint-laptop: 1024px;
 @media (min-width: $breakpoint-laptop) {
   .directory-menu {
     grid-template-columns: repeat(6, 1fr);
-    margin-top: -10rem;
+    // margin-top: -10rem;
   }
 }
 
@@ -35,6 +35,6 @@ $breakpoint-laptop: 1200px;
 @media (min-width: $breakpoint-laptop) {
   .directory-menu {
     grid-template-columns: repeat(6, 1fr);
-    margin-top: -12rem;
+    // margin-top: -12rem;
   }
 }
