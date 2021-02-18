@@ -1,4 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
 
 import './login.styles.scss';
 
@@ -28,35 +32,38 @@ class Login extends React.Component {
     return (
       <>
         <div className="login">
-          <h2>I already have an account</h2>
-          <span>Sign in with your email and password</span>
+          <div className="login-copy">
+            <h2>Sign in and start adding to your wardrobe.</h2>
+            <span>Sign in with your email and password</span>
+          </div>
 
           <form onSubmit={this.handleSubmit}>
-
             <div>
-              <label htmlFor="email">Email:</label>
-              <input 
+              <FormInput 
                 type="email" 
-                name="email" 
-                onChange={this.handleChange}
+                name="email"
+                label="Email"
+                handleChange={this.handleChange}
                 value={this.state.email} required
               />
             </div>
             
             <div>
-              <label htmlFor="password">Password:</label>
-              <input 
+              <FormInput 
                 type="password" 
                 name="password" 
-                onChange={this.handleChange}
+                label="Password"
+                handleChange={this.handleChange}
                 value={this.state.password} 
                 required
               />
             </div>
 
-            <input type="submit" value="Sign in"/>
+            <CustomButton type="submit">Sign In</CustomButton>
 
           </form>
+
+          <p>I dont have an account... <Link className="register-link" to="/register">Register</Link></p>
         </div>
       </>
     )

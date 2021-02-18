@@ -1,5 +1,5 @@
 .collection-preview {
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
   .title {
     margin-bottom: 1rem;
 
@@ -9,8 +9,17 @@
   .preview {
     //   display: flex;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2rem;
+  }
+}
+
+$breakpoint-phones: 400px;
+@media (min-width: $breakpoint-phones) {
+  .collection-preview {
+    .preview {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
   }
 }
 
@@ -18,8 +27,10 @@ $breakpoint-laptop: 1000px;
 @media (min-width: $breakpoint-laptop) {
   .collection-preview {
     .title {
-      // margin-top: 3rem;
       font-size: 2.5rem;
+    }
+    .preview {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
   }
 }

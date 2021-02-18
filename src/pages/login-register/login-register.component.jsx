@@ -6,10 +6,13 @@ import './login-register.styles.scss';
 
 const LoginAndRegister = () => (
   <div className="login-register">
-    <div className="container">
-      <h1>Login page</h1>
+    {/* <div className="container"> */}
+      <div className="form-container">
       <Login></Login>
-    </div>
+      {/* <Login></Login> */}
+
+      </div>
+    {/* </div> */}
   </div>
 )
 

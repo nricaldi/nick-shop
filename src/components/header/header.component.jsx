@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './header.styles.scss';
 
-const Header = () => (
+const Header = () => {
+
+  const [active, setActive] = useState(false);
+
+  const burgerStyle = {
+    
+  }
+
+  return(
   <>
     <header className="header">
       <div className="container">
@@ -12,17 +20,51 @@ const Header = () => (
             <h1>RCLD</h1>
           </Link>
 
-          <div className="options">
-            <Link className="option" to="/">
+          <div 
+            className="burger"
+            onClick={() => {
+                setActive(!active);
+                console.log(active)
+              }
+            }
+            style={burgerStyle}
+          >
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+
+          {/* <div className="options "> */}
+          <div className={`options ${active ? "active-nav" : ""}`}>
+            <Link 
+              className="option" 
+              to="/" 
+              onClick={() => setActive(false)}
+            >
               Home
             </Link>
-            <Link className="option" to="/shop">
+
+            <Link 
+              className="option" 
+              to="/shop"
+              onClick={() => setActive(false)}
+            >
               Shop
             </Link>
-            <Link className="option" to="/contact">
+
+            <Link 
+              className="option" 
+              to="/contact"
+              onClick={() => setActive(false)}  
+            >
               Contact
             </Link>
-            <Link className="option" to="/login">
+
+            <Link 
+              className="option" 
+              to="/login"
+              onClick={() => setActive(false)}
+            >
               Sign in
             </Link>
           </div>
@@ -36,6 +78,7 @@ const Header = () => (
       </div>
     </section>
   </>
-)
+  )
+}
 
 export default Header;
