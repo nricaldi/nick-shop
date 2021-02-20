@@ -10,32 +10,42 @@ header {
     .options {
       // display: none;
       position: absolute;
-      // height: 50%;
+      height: 100%;
       width: 100%;
-      left: 0;
-      // top: 0;
-      top: 88px;
-      height: 0px;
-      overflow: hidden;
+      left: -100%;
+      top: 0;
+      opacity: 0;
+      transition: all ease-in-out 250ms;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       background: #d11000;
       z-index: 5;
-      transition: all cubic-bezier(0, 0.55, 0.45, 1) 500ms;
 
       &.active-nav {
-        height: 55%;
+        // height: 75%;
+
+        left: 0;
+        opacity: 1;
+        // position: fixed;
       }
 
       .option {
-        color: #e4e4e4;
+        color: #dbdbdb;
         padding: 2rem;
+        display: inline-block;
+        cursor: pointer;
         font-weight: bold;
         font-size: 1.4rem;
         transition: all 250ms ease-in-out;
         position: relative;
+
+        &:hover {
+          color: #fff;
+        }
       }
     }
 
@@ -45,20 +55,44 @@ header {
       padding: 1rem;
       margin-right: -1rem;
       cursor: pointer;
+
       .line {
-        margin-left: auto;
+        margin: 0 auto;
         height: 4px;
         width: 40px;
         background: #fff;
         border-radius: 3px;
         margin-bottom: 6px;
+        transition: all ease-in-out 0.25s;
+        transition-delay: 0.25s;
 
         &:nth-child(2) {
-          width: 25px;
+          transition: all ease-in-out 0.5s;
+          transition-delay: 0.5s;
+          width: 30px;
         }
 
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+
+      &.active-burger {
+        .line-1 {
+          // opacity: 0;
+          transform: translateY(10px) rotate(45deg);
+        }
+        .line-2 {
+          // opacity: 0;
+          // transform: translateY(1px) rotate(-45deg);
+          // transform: rotate(45deg);
+          width: 0px;
+          transition: all ease-in-out 0.25s;
+        }
+        .line-3 {
+          // transform: translateY(-10px);
+          // transform: translateY(-10px) rotate(135deg);
+          transform: translateY(-10px) rotate(-45deg);
         }
       }
     }
@@ -94,8 +128,15 @@ $breakpoint-tablet: 768px;
         position: relative;
         background: none;
         width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+        overflow: visible;
+
+        opacity: 1;
 
         .option {
+          padding: 0;
           margin-left: 2rem;
           padding: none;
           padding-bottom: 0.25rem;
@@ -114,6 +155,7 @@ $breakpoint-tablet: 768px;
             bottom: 0;
             left: 0;
             width: 0%;
+            // transition: all cubic-bezier(0, 0.55, 0.45, 1) 400ms;
             transition: all ease-in-out 250ms;
           }
 

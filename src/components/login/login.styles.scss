@@ -1,17 +1,15 @@
-.login {
-}
-
 .login-copy {
   margin-bottom: 3rem;
 
   h2 {
-    font-size: 1.25rem;
+    // font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    // margin-bottom: 0.5rem;
   }
 
   span {
     color: rgb(121, 121, 121);
+    font-size: 0.9rem;
   }
 }
 
@@ -23,4 +21,16 @@ p {
   color: #000;
   font-weight: 500;
   text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .login-copy {
+    h2 {
+      font-size: 2rem;
+    }
+
+    span {
+      font-size: 1.1rem;
+    }
+  }
 }

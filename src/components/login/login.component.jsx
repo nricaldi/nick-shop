@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 import './login.styles.scss';
 
 class Login extends React.Component {
@@ -33,8 +35,8 @@ class Login extends React.Component {
       <>
         <div className="login">
           <div className="login-copy">
-            <h2>Sign in and start adding to your wardrobe.</h2>
-            <span>Sign in with your email and password</span>
+            <h2>Welcome Back! We missed you.</h2>
+            <span>Sign in using your email and password</span>
           </div>
 
           <form onSubmit={this.handleSubmit}>
@@ -60,6 +62,7 @@ class Login extends React.Component {
             </div>
 
             <CustomButton type="submit">Sign In</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn >Sign In With Google</CustomButton>
 
           </form>
 
