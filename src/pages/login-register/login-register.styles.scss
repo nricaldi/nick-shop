@@ -4,4 +4,12 @@
   background: #fff;
   padding: 2rem;
   border-radius: 10px;
+  transition: all ease-in-out 500ms;
+
+  .register-link {
+    color: #000;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

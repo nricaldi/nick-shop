@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
 
 import './header.styles.scss';
+import { ReactComponent as Logo } from '../../images/rcld-filled.svg';
 
 const Header = ({ currentUser }) => {
 
   const [active, setActive] = useState(false);
   const body = document.getElementsByTagName("BODY")[0];
-
+ 
   const toggleActive = () => {
     setActive(!active);
-    !active ? body.style.overflow = "hidden" : body.style.overflow = "auto"
+
+    const w = window.innerWidth;
+    if (w <= 768) !active ? body.style.overflow = "hidden" : body.style.overflow = "auto"
   }
 
   return(
@@ -26,7 +29,8 @@ const Header = ({ currentUser }) => {
             // onClick={toggleActive}
             onClick={() => setActive(false)}
           >
-            <h1>RCLD</h1>
+            {/* <h1>RCLD</h1> */}
+            <Logo />
           </Link>
 
           <div 
@@ -43,7 +47,6 @@ const Header = ({ currentUser }) => {
               className="option" 
               to="/" 
               onClick={toggleActive}
-              // onClick={() => setActive(false)}
             >
               Home
             </Link>
@@ -52,7 +55,6 @@ const Header = ({ currentUser }) => {
               className="option" 
               to="/shop"
               onClick={toggleActive}
-              // onClick={() => setActive(false)}
             >
               Shop
             </Link>
@@ -61,7 +63,6 @@ const Header = ({ currentUser }) => {
               className="option" 
               to="/contact"
               onClick={toggleActive}
-              // onClick={() => setActive(false)}  
             >
               Contact
             </Link>
@@ -83,13 +84,12 @@ const Header = ({ currentUser }) => {
                 className="option" 
                 to="/login"
                 onClick={toggleActive}
-              // onClick={() => setActive(false)}
               >
                 Sign in
               </Link>
 
             }
-
+            
           </div>
         </div>
       </div>
