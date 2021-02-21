@@ -1,10 +1,8 @@
 // import { render } from '@testing-library/react';
-import React, { useState } from 'react';
+import React, { useState, useHistory } from 'react';
 
 import Login from '../../components/login/login.component';
 import SignUp from '../../components/sign-up/sign-up.component';
-
-import Fade from 'react-reveal';
 
 import './login-register.styles.scss';
 
@@ -23,9 +21,9 @@ const LoginAndRegister = () => {
 
         {
           isLogin ?
-            <p>I dont have an account... <a className="register-link" onClick={()=>setIsLogin(!isLogin)}>Register</a></p>
+          <p>I'm not cool yet... <span className="register-link" onClick={()=>setIsLogin(!isLogin)}>Register</span></p>
           :
-            <p>I already have an account... <a className="register-link" onClick={()=>setIsLogin(!isLogin)}>Sign In</a></p>
+          <p>I already have an account... <span className="register-link" onClick={()=>setIsLogin(!isLogin)}>Sign In</span></p>
         }
         </div>
     </div>

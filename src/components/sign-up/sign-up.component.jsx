@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import Fade from 'react-reveal/Fade';
-import Bounce from 'react-reveal/Bounce';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -21,10 +19,25 @@ class SignUp extends React.Component {
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
 
-    this.setState({displayName: '', email: '', password: '', confirmPassword: ''})
+    const { displayName, email, password, confirmPassword } = this.state;
+
+    if(password !== confirmPassword) {
+        alert('passwords do not match');
+        return;
+    }
+
+    try {
+        const { user } = await auth.createUserWithEmailAndPassword(email, password);
+        await createUserProfileDocument(user, { displayName });
+        this.setState({displayName: '', email: '', password: '', confirmPassword: ''});        
+    }
+    catch (error) {
+        console.log(error);
+    }
+
   }
 
   handleChange = e => {
@@ -38,10 +51,12 @@ class SignUp extends React.Component {
       <>
        <div className="login" style={{overflow: 'hidden'}}>
         
+        <Fade>
           <div className="login-copy">
             <h2>Great to see a new face!</h2>
             <span>Let us get to know you a little bit.</span>
           </div>
+        </Fade>
 
           <form onSubmit={this.handleSubmit}>
             <Fade top cascade> 

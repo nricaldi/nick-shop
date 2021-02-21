@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -36,10 +35,12 @@ class Login extends React.Component {
     return (
       <>
         <div className="login">
-          <div className="login-copy">
-            <h2>Welcome Back! We missed you.</h2>
-            <span>Sign in using your email and password</span>
-          </div>
+          <Fade>
+            <div className="login-copy">
+              <h2>Welcome Back! We missed you.</h2>
+              <span>Sign in using your email and password</span>
+            </div>
+          </Fade>
 
           <form onSubmit={this.handleSubmit}>
             <Fade top cascade>
