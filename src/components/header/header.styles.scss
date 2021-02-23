@@ -1,13 +1,11 @@
 header {
   background: #d11000;
-  position: relative;
 
   .logo {
     width: 80px;
   }
 
   .content {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,9 +137,9 @@ $breakpoint-tablet: 768px;
       }
       .options {
         display: block;
-        // display: flex;
-        // flex-direction: row;
-        // align-items: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         position: relative;
         background: none;
         width: auto;
@@ -190,7 +188,7 @@ $breakpoint-tablet: 768px;
     margin-bottom: -10rem;
     h1 {
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }

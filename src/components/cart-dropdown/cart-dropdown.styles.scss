@@ -7,7 +7,7 @@
   padding: 20px;
   background: #d11000;
   background: #fff;
-  top: 108px;
+  top: 103px;
   right: 0;
   border-radius: 0 0 10px 10px;
   z-index: 5;
@@ -16,7 +16,7 @@
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
   }
 
   button {

@@ -37,6 +37,18 @@
       border-color: #357ae8;
     }
   }
+
+  &.inverted {
+    color: #fff;
+    border-color: #ec1400;
+    background: #ec1400;
+
+    &:hover,
+    &:focus {
+      border-color: #b90f00;
+      background: #b90f00;
+    }
+  }
 }
 
 @media (min-width: 400px) {

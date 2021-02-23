@@ -2,14 +2,49 @@
   cursor: pointer;
 
   .image {
+    position: relative;
     // background: #000;
     height: 500px;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
     background-position: center;
     background-size: cover;
+    transition: all ease-in-out 250ms;
+
+    .overlay {
+      transition: all ease-in-out 250ms;
+      position: relative;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0);
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .custom-button {
+      position: absolute;
+      width: calc(100% - 4rem);
+      left: 2rem;
+      bottom: 2rem;
+      display: none;
+      z-index: 4;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .custom-button {
+        opacity: 1;
+        display: block;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.25);
+      }
+    }
   }
+
   .collection-footer {
     width: 100%;
     display: flex;

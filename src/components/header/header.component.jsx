@@ -103,7 +103,7 @@ const Header = ({ currentUser, hidden }) => {
 
     <section className="hero">
       <div className="container">
-          <h1>High Fashion On A Low Budget</h1>
+          <h1>High Fashion On A Low Budget.</h1>
       </div>
     </section>
   </>
