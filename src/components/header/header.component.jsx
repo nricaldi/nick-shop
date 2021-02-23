@@ -4,10 +4,13 @@ import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import './header.styles.scss';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as Logo } from '../../images/rcld-filled.svg';
+import './header.styles.scss';
 
-const Header = ({ currentUser }) => {
+
+const Header = ({ currentUser, hidden }) => {
 
   const [active, setActive] = useState(false);
   const body = document.getElementsByTagName("BODY")[0];
@@ -66,7 +69,6 @@ const Header = ({ currentUser }) => {
               Contact
             </Link>
 
-
             {
               currentUser ? 
               <div 
@@ -88,8 +90,13 @@ const Header = ({ currentUser }) => {
               </Link>
 
             }
+
+            <CartIcon />
             
           </div>
+          {
+            hidden ? null : <CartDropdown />
+          }
         </div>
       </div>
     </header>
@@ -106,8 +113,11 @@ const Header = ({ currentUser }) => {
 // Use this to GET data from the store (root reducer state object)
 // The state object we get is the root reducer
 // Literally maps state to props 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+
+const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
+  currentUser,
+  hidden
 });
+
 
 export default connect(mapStateToProps)(Header);

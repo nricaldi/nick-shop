@@ -1,0 +1,25 @@
+.cart-container {
+  display: inline-block;
+
+  .cart-icon {
+    display: inline-block;
+    // margin-left: 2rem;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    width: 32px;
+
+    .shopping-icon {
+      transform: scale(1.1);
+    }
+
+    .item-count {
+      position: absolute;
+      font-size: 0.8rem;
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: #fff;
+    }
+  }
+}
