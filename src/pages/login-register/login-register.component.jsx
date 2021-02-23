@@ -1,5 +1,6 @@
-// import { render } from '@testing-library/react';
-import React, { useState, useHistory } from 'react';
+
+// import React, { useState, useHistory } from 'react';
+import React, { useState } from 'react';
 
 import Login from '../../components/login/login.component';
 import SignUp from '../../components/sign-up/sign-up.component';
@@ -29,6 +30,5 @@ const LoginAndRegister = () => {
     </div>
   )
 }
-
 
 export default LoginAndRegister;

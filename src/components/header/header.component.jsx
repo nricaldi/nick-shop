@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
@@ -26,10 +27,8 @@ const Header = ({ currentUser }) => {
           <Link 
             to="/" 
             className="logo"
-            // onClick={toggleActive}
             onClick={() => setActive(false)}
           >
-            {/* <h1>RCLD</h1> */}
             <Logo />
           </Link>
 
@@ -104,4 +103,11 @@ const Header = ({ currentUser }) => {
   )
 }
 
-export default Header;
+// Use this to GET data from the store (root reducer state object)
+// The state object we get is the root reducer
+// Literally maps state to props 
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(Header);
