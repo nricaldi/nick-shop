@@ -9,6 +9,11 @@ export const selectCartItems = createSelector(
   (cart) => cart.cartItems // function that returns the value we want from the selector
 );
 
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+);
+
 export const selectCartItemsCount = createSelector(
   [selectCartItems],
   cartItems =>
@@ -16,7 +21,6 @@ export const selectCartItemsCount = createSelector(
       (accumulatedQuantity, cartItem) => 
         accumulatedQuantity + cartItem.quantity , 0
       )
-
 )
 
 export const selectCartItemsSubtotal = createSelector(

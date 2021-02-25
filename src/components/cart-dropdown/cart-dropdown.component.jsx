@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect';
+
 
 import { selectCartItemsSubtotal } from '../../redux/cart/cart.selectors';
 import { selectCartItems} from '../../redux/cart/cart.selectors'
@@ -31,9 +33,9 @@ const Cart = ({ cartItems, subTotal }) => (
 //   subTotal: cartItems.reduce( (accumulatedPrice, cartItem) =>  accumulatedPrice + (cartItem.quantity * cartItem.price) ,0)
 // });
 
-const mapStateToProps = state => ({
-  cartItems: selectCartItems(state),
-  subTotal: selectCartItemsSubtotal(state)
+const mapStateToProps = createStructuredSelector ({
+  cartItems: selectCartItems,
+  subTotal: selectCartItemsSubtotal
 });
 
 export default connect(mapStateToProps)(Cart);
