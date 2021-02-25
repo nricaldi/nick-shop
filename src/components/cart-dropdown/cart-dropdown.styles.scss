@@ -21,9 +21,18 @@
     overflow: auto;
   }
 
-  button {
-    margin: 0 auto;
-    margin-top: auto;
-    width: calc(100% - 2rem);
+  .dropdown-bottom {
+    padding: 0 1rem;
+
+    p {
+      text-align: right;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      .total-price {
+        font-weight: 600;
+      }
+    }
+    button {
+    }
   }
 }
