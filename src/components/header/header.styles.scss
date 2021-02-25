@@ -29,10 +29,8 @@ header {
 
       background: #d11000;
       z-index: 5;
-
       &.active-nav {
         // height: 75%;
-
         left: 0;
         opacity: 1;
         // position: fixed;
@@ -128,6 +126,8 @@ $breakpoint-tablet: 768px;
   header {
     .content {
       padding: 2rem 0;
+      position: relative;
+
       .logo {
         width: 100px;
       }

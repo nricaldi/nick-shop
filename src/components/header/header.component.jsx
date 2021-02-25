@@ -13,13 +13,17 @@ import './header.styles.scss';
 const Header = ({ currentUser, hidden }) => {
 
   const [active, setActive] = useState(false);
+  const [isPhone, setisPhone] = useState(true);
   const body = document.getElementsByTagName("BODY")[0];
  
   const toggleActive = () => {
     setActive(!active);
 
     const w = window.innerWidth;
-    if (w <= 768) !active ? body.style.overflow = "hidden" : body.style.overflow = "auto"
+    if (w <= 768) {
+      !active ? body.style.overflow = "hidden" : body.style.overflow = "auto";
+
+    }
   }
 
   return(
@@ -35,6 +39,7 @@ const Header = ({ currentUser, hidden }) => {
             <Logo />
           </Link>
 
+          {/* <CartIcon /> */}
           <div 
             className={`burger ${active ? "active-burger" : ""}`}
             onClick={toggleActive}
@@ -92,7 +97,15 @@ const Header = ({ currentUser, hidden }) => {
             }
 
             <CartIcon />
-            
+
+            {/* <Link 
+                className="option" 
+                to="/checkout"
+                onClick={toggleActive}
+              >
+                Cart
+              </Link> */}
+
           </div>
           {
             hidden ? null : <CartDropdown />
