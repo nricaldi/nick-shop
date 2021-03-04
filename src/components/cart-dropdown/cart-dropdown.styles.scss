@@ -12,6 +12,12 @@
   z-index: 5;
   padding-bottom: 1rem;
 
+  .empty-cart {
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding-right: 1rem;
+  }
+
   .cart-items {
     height: 100%;
     padding: 1rem;
@@ -31,8 +37,6 @@
       .total-price {
         font-weight: 600;
       }
-    }
-    button {
     }
   }
 }

@@ -118,11 +118,11 @@ const Header = ({ currentUser, hidden }) => {
       </div>
     </header>
 
-    <section className="hero">
+    {/* <section className="hero">
       <div className="container">
           <h1>High Fashion On A Low Budget.</h1>
       </div>
-    </section>
+    </section> */}
   </>
   )
 }
