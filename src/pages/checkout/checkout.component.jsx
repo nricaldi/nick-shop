@@ -36,7 +36,6 @@ const CheckoutPage = ({ cartItems, subTotal }) => (
 
       <h2 className="total">Total: ${subTotal}</h2>
 
-
     </div>
   </div>
 )
